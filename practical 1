@@ -26,6 +26,7 @@ void bubbleSort(vector<int>& arr) {
     }
 }
 
+
 // 2. Selection Sort (Standard)
 void selectionSort(vector<int>& arr) {
     int n = arr.size();
@@ -42,6 +43,8 @@ void selectionSort(vector<int>& arr) {
     }
 }
 
+
+
 // 3. Insertion Sort (Standard)
 void insertionSort(vector<int>& arr) {
     int n = arr.size();
@@ -55,6 +58,8 @@ void insertionSort(vector<int>& arr) {
         arr[j + 1] = key;
     }
 }
+
+
 
 // 4. Merge Sort (Optimized: Zero dynamic allocations inside the loop)
 void merge(vector<int>& arr, vector<int>& temp, int l, int m, int r) {
@@ -86,6 +91,7 @@ void mergeSort(vector<int>& arr) {
     vector<int> temp(arr.size()); // Allocate memory EXACTLY once
     mergeSortHelper(arr, temp, 0, arr.size() - 1);
 }
+
 
 // 5. Quick Sort (Optimized: Hoare's Partition Scheme + Middle Pivot)
 int partition(vector<int>& arr, int low, int high) {
@@ -127,6 +133,7 @@ void benchmark(const string& name, const vector<int>& originalData, function<voi
     cout.width(18); cout << left << name << ": "
          << duration << " microseconds\n";
 }
+
 
 int main() {
     // Increased n to 10,000. 100 is too small to measure CPU time accurately.
